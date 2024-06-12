@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex025</title>
+    <style>
+          body{
+               background-color: brown;
+               font-family: Arial, Helvetica, sans-serif;
+          }
+
+          section{
+              background-color: white;
+              border-radius: 10px;
+              padding: 20px;
+              width: 500px;
+              margin: auto;
+          }
+
+          section h1{
+              text-align: center;
+          }
+    </style>
+</head>
+<body>
+      <section>
+            <h1>Segmento De Recta</h1>
+            <p>
+                 Digite o primeiro segmento: <input type="number" name="text1" id="text1">
+            </p>
+            <p>
+                  Digite O Segundo segmento: <input type="number" name="text2" id="text2">
+            </p>
+
+            <p>
+                 digite o Terceiro Segmento : <input type="number" name="text3" id="text3">
+            </p>
+
+            <p>
+                  <input type="submit" value="Verificar" onclick="verificar()">
+            </p>
+
+            <div id="res">
+                    calcular..
+            </div>
+      </section>
+</body>
+<script>
+      function verificar(){
+            var n1 = window.document.getElementById('text1')
+            var n2 = window.document.getElementById('text2')
+            var n3 = window.document.getElementById('text3')
+            var res = window.document.getElementById('res')
+            var n1 = Number(text1.value)
+            var n2 = Number(text2.value)
+            var n3 = Number(text3.value)
+                  res.innerHTML = `<p>O segmento da recta1 é = ${n1} e o da recta2 é = ${n2} e o da recta3 é = ${n3}<\p>`
+                    if ( n1 < n2 + n3  && n2 < n1 + n3 && n3 < n1 + n2){
+                        res.innerHTML += `É possível formar um triângulo com essas retas.<\p>`   
+                    }else{
+                        res.innerHTML += `<p>Não é possível formar um triângulo com essas retas.<\p>`
+                    }
+      }
+</script>
+</html>

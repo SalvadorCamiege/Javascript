@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem043</title>
+    <style>
+        body{
+             background-color: chartreuse;
+             font-family: Arial, Helvetica, sans-serif;
+        }
+        header h1{
+            text-align: center;
+            color: white;
+        }
+
+        section{
+            background-color: white;
+            padding: 10px;
+            width: 500px;
+            margin: auto;
+            border-radius: 10px;
+        }
+  </style>
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+  </header>
+  <section>
+        <div>
+              <p>
+                   Número <input type="number" name="sc1" id="text1">
+              </p>
+            
+              <p>
+                    <input type="submit" value="Contar" onclick="contar()">
+              </p>
+        </div>
+        <div id="res">
+               Contagem...
+        </div>
+  </section>
+</body>
+<script>
+       function contar(){
+             let numero = window.document.getElementById('text1')
+             let res = window.document.getElementById('res')
+
+             if(numero.value == 0){
+                  window.alert('[Erro] Verifique os dados e tenta novamente')
+             }else{
+                        res.innerHTML = 'Contando...'
+                   let num = Number(numero.value)
+                   for (let i = 30; i >=1 ; i--) {
+                    // Dentro do processo de repetiçâo devemos colocar uma condição para tornar o número divisivel como esta ai em baixo..... mas dentro temos que colocar as aspas para indicar que é divisivel...e o else com outra condição...
+                        if (i % 4 === 0){
+                            res.innerHTML += `[${i}] 👉`
+                        }else{
+                            res.innerHTML += `${i}  👉`
+                        }
+                          
+                 }
+
+             }
+       }
+</script>
+</html>

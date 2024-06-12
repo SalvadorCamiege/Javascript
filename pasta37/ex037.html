@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema De salário</title>
+    <style>
+           body{
+               background-color: brown;
+               font-family: Arial, Helvetica, sans-serif;
+           }
+
+           header h1{
+                color: white;
+                text-align: center;
+           }
+
+           section{
+                background-color: white;
+                padding: 10px;
+                width: 500px;
+                margin: auto;
+                border-radius: 15px;
+           }
+
+           section h2{
+                 text-align: center;
+                 font-size: 2em;
+           }
+
+    </style>
+</head>
+<body>
+       <header>
+            <h1>Sistema De salário</h1>
+       </header>
+       <section>
+              <h2>Preencha os Dados Abaixo</h2>
+             <p>
+                  Salário actual: <input type="number" name="text1" id="text1">
+             </p>
+             <p>
+                   Gênero do funcionario (a): <input type="text" name="text2" id="text2">
+             </p>
+
+             <p>
+                   Anos De trabalho do funcionario(a): <input type="number" name="text3" id="text3">
+             </p>
+             <p>
+                  <input type="submit" value="vrificar" onclick="verificar()">
+             </p>
+
+             <div id="res">
+                   verificar...
+             </div>
+       </section>
+</body>
+<script>
+       function verificar(){
+            var salarioactual = window.document.getElementById('text1')
+            var genero = window.document.getElementById('text2')
+            var ano = window.document.getElementById('text3')
+            var res = window.document.getElementById('res')
+           
+            var salarioactual = Number(text1.value)
+            var genero = (text2.value)
+            var ano = Number(text3.value)
+            
+             var percentagem = salarioactual*(5/100)
+             var resul = salarioactual+percentagem
+              
+             var percentagem1 = salarioactual*(12/100)
+             var resul1 = salarioactual+percentagem1
+
+             var percentagem2 = salarioactual*(23/100)
+             var resul2 = salarioactual+percentagem2
+
+             var percentagem0 = salarioactual*(3/100)
+             var resul0 = salarioactual+percentagem0
+              
+             var percentagem3 = salarioactual*(12/100)
+             var resul3 = salarioactual+percentagem3
+
+             var percentagem4 = salarioactual*(23/100)
+             var resul4 = salarioactual+percentagem4
+          
+             res.innerHTML = `<p>O salário actual do funcionario com Gênero ${genero} trabalhador da impresa durante ${ano} anos é de ${salarioactual}Kz<\p>`
+
+                           //mulher
+                  if(genero == 'Mulher' && ano < 15){
+                       res.innerHTML += `<p>O salário actualizado do funcionario é : ${resul}Kz<\p>`
+                  }else if (genero == 'Mulher' && ano >= 15 && ano < 20){
+                        res.innerHTML += `<p>O salário actualizado do funcionario é : ${resul1}Kz<\p>`
+                  }else if(genero == 'Mulher' && ano > 20){
+                        res.innerHTML += `<p>O salário actualizado do funcionario é : ${resul2}Kz<\p>`
+                  }
+
+                           // homem
+
+                  if(genero == 'Homem' && ano < 20){
+                       res.innerHTML += `<p>O salário actualizado do funcionario é : ${resul0}Kz<\p>`
+                  }else if (genero == 'Homem' && ano >= 20 && ano < 30){
+                        res.innerHTML += `<p>O salário actualizado do funcionario é : ${resul3}Kz<\p>`
+                  }else if(genero == 'Homem' && ano > 30){
+                        res.innerHTML += `<p>O salário actualizado do funcionario é : ${resul4}Kz<\p>`
+                  }
+       } 
+</script>
+</html>

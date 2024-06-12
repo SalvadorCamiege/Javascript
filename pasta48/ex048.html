@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de números inteiro</title>
+    <style>
+          body{
+              background-color: blanchedalmond;
+          }
+
+          section{
+              background-color: white;
+              width: 500px;
+              margin: auto;
+              padding: 10px;
+          }
+    </style>
+</head>
+<body>
+      <section>
+          <h1>Somatorio de números inteiros</h1>
+          <p>
+            Digite um numero inteiro: <input type="number" name="sc" id="text1">
+        </p>
+        <p>
+               <input type="submit" value="Somar" onclick="somar()">
+        </p>
+        
+        <div id="res">
+               
+        </div>
+      </section>
+</body>
+<script>
+     function somar(){
+          let numero = window.document.getElementById('text1')
+          let res = window.document.getElementById('res')
+          if(numero.value == 0){
+                window.alert('[Erro] verifique os dados')
+          }else{
+              let n = Number(numero.value)
+            
+              for (let i = 0; i < 7 ; i++) {
+                let Somatorio = n + i
+                res.innerHTML = `A soma é ${Somatorio}`
+                
+              }
+            
+          }
+     }
+
+   
+</script>
+</html>

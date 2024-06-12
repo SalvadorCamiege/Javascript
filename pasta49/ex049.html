@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de calculos</title>
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+
+        section{
+            background-color: white;
+            width: 500px;
+            margin: auto;
+            padding: 10px;
+        }
+  </style>
+</head>
+<body>
+        <section>
+             <h1>Numeos Imar e impar</h1>
+        </section>
+</body>
+<script>
+    function lerNumeroInteiro(mensagem) {
+    return parseInt(prompt(mensagem));
+    }
+
+    let pares = 0;
+    let impares = 0;
+
+    // Loop para ler 6 números e contar os pares e ímpares
+    for (let i = 0; i < 6; i++) {
+      const numero = lerNumeroInteiro("Digite um número inteiro:");
+      if (numero % 2 === 0) {
+        pares++;
+      } else {
+        impares++;
+      }
+    }
+
+    // Exibindo o resultado
+    document.write("<p>Quantidade de números pares: " + pares + "</p>");
+    document.write("<p>Quantidade de números ímpares: " + impares + "</p>");
+</script>
+</html>

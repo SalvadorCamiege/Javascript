@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoção</title>
+    <style>
+          body{
+               background-color: brown;
+               font-family: Arial, Helvetica, sans-serif;
+          }
+
+          section{
+              background-color: fuchsia;
+              padding: 10px;
+          }
+
+          section h1{
+                color: white;
+                text-align: center;
+          }
+    </style>
+</head>
+<body>
+      <section>
+            <h1>Promoção</h1>
+            <p>Nome: <input type="text" name="text1" id="text1"></p>
+            <p>Sexo: <input type="text" name="text2" id="text2"></p>
+            <p>Valor total de Compras: <input type="number" name="text3" id="text3"></p>
+            <p><input type="submit" value="verificar" onclick="verificar()"></p>
+
+            <div id="res">
+                  calcular...
+            </div>
+      </section>
+</body>
+<script>
+      function verificar(){
+          var nome = window.document.getElementById('text1')
+          var sexo = window.document.getElementById('text2')
+          var compra = window.document.getElementById('text3')
+          var res = window.document.getElementById('res')
+
+          var nome = (text1.value)
+          var sexo = (text2.value)
+          var compra = Number(text3.value)
+
+          var homens = compra*(5/100)
+          var h1 = compra-homens
+          var mulheres = compra*(13/100)
+          var m1 = compra-mulheres
+           
+          res.innerHTML = `<p>Cliente com o nome ${nome} com o sexo ${sexo} efectuo uma compra total de ${compra} kz.<\p>`
+            
+            if(sexo === 'Masculino'){
+                res.innerHTML +=`Estas de Parabéns nosso guerreiro, efectuamos um desconto de 5% com isso a tua conta total é de ${h1} kz<\p>`
+            }else if(sexo === 'Femenino'){
+                res.innerHTML +=`<p>Estas de Parabéns nossa guerreira, efectuamos um desconto de 13% com isso a tua conta total é de ${m1} kz<\p>`
+            }
+      }
+</script>
+</html>

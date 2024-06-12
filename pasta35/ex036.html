@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de aluguel de Carro</title>
+    <style>
+          body{
+              background-color: blue;
+              font-family: Arial, Helvetica, sans-serif;
+          }
+
+          section{
+              background-color: white;
+              padding: 10px;
+              width: 600px;
+              margin: auto;
+              border-radius: 10px;
+          }
+
+          header h1{
+               color: white;
+               text-align: center;
+          }
+    </style>
+</head>
+<body>
+    <header>
+          <h1>Sistema de aluguel de Carro</h1>
+    </header>
+    <section>
+           <p>
+               Tipo de carro alugado : <input type="text" name="text1" id="text1">
+           </p>
+           <p>
+                Quantos dias de aluguel do carro?: <input type="number" name="text2" id="text2">
+           </p>
+
+           <p>
+                Quantos Km percoridos? : <input type="number" name="text3" id="text3">
+           </p>
+
+           <p>
+                 <input type="submit" value="Verificar" onclick="verificar()">
+           </p>
+
+           <div id="res">
+                verificar...
+           </div>
+    </section>
+</body>
+   <script>
+    function verificar(){
+        var Tcarro = window.document.getElementById('text1')
+        var dia = window.document.getElementById('text2')
+        var Km = window.document.getElementById('text3')
+        var res = window.document.getElementById('res')
+
+        var Tcarro = (text1.value)
+        var dia = Number(text2.value)
+        var Km = Number(text3.value)
+
+        var popular = dia*90
+        var luxo = dia*150
+
+        res.innerHTML = `<p>O tipo de carro alugado é : ${Tcarro}, foi alugado em ${dia} dias e percorreu ${Km}Km<\p>`
+            if(Tcarro == popular || Km <= 100){
+                res.innerHTML += `<p>O preço a pagar é de : ${Km*0.20+popular}kz<\p>`
+            }else if(Tcarro == popular || Km > 100){
+                res.innerHTML += `<p>O preço a pagar é de : ${Km*0.10+popular}kz<\p>` 
+            }else if(Tcarro == Luxo || Km <= 200){
+                 res.innerHTML += `<p>O preço a pagar é de : ${Km*0.30+popular}kz<\p>`
+            }else if(Tcarro == popular || Km > 200){
+                 res.innerHTML += `<p>O preço a pagar é de : ${Km*0.25+popular}kz<\p>`
+            }
+       
+         }
+      
+   </script>
+</html>

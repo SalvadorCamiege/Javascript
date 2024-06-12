@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Multas</title>
+    <style>
+           body{
+                background-color: brown;
+                font-family: Arial, Helvetica, sans-serif;
+           }
+
+           section{
+               background-color: white;
+               width: 500px;
+               margin: auto;
+               border-radius: 10px;
+               padding: 15px;
+           }
+
+           section h1{
+                text-align: center;
+                color: black;
+                font-size: 2em;
+           }
+    </style>
+</head>
+<body>
+      <section>
+            <h1>Sistemas De Multas</h1>
+            <p>
+                 Velocidade do Carro: <input type="number" name="text1" id="text1">
+                 <input type="submit" value="Verificar" onclick="verificar()">
+            </p>
+
+            <div id="res">
+                   Verificar...
+            </div>
+      </section>
+</body>
+<script>
+       function verificar(){
+            var vel = window.document.getElementById('text1')
+            var res = window.document.getElementById('res')
+            var vel = Number(text1.value)
+            res.innerHTML = (`A velocidade do teu carro é de ${vel}Km/h`)
+
+            if(vel > 50){
+                res.innerHTML += `<p>Voce esta a andar com uma velocidade de ${vel}km/h. ultrapassaste a velocidade permitida.Multado<\p>`
+            }
+
+           res.innerHTML += `<p>Conduza com moderação! usa sempre o cinto de segurança.<\p>`
+       }
+</script>
+</html>

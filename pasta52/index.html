@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo 52</title>
+    <style>
+           body{
+              background-color: brown;
+              font-family: Arial, Helvetica, sans-serif;
+           }
+
+           header h1{
+                 color: white;
+                 text-align: center;
+                 
+           }
+
+           section{
+               background-color: white;
+               padding: 10px;
+               width: 500px;
+               margin: auto;
+               border-radius: 10px;
+               box-shadow: 1px 1px 1px 1px black;
+           }
+
+           section #text2{
+                width: 150px;
+                height: 150;
+           }
+    </style>
+</head>
+<body>
+      <header>
+             <h1>Idenfificador de idade</h1>
+      </header>
+      <section>
+            <p>Idade respectiva de 10 pessoas: <input type="number" name="sc1" id="text1">
+            <input type="submit" value="Adcionar" onclick="Adicionar()">
+            </p>
+            
+            <p>
+                 <select name="sc2" id="text2" size="8px">
+
+                 </select>
+            </p>
+
+            <p> 
+                <input type="submit" value="Verificar" onclick="verificar()">
+            </p>
+
+            <div id="res">
+                   verificar...
+            </div>
+      </section>
+</body>
+<script>
+    let num = window.document.getElementById('text1')
+    let lista = window.document.getElementById('text2')
+    let res = window.document.getElementById('res')
+    let valores = []
+    
+    function isNumero(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n) && Number(n) >= 1 && Number(n) <= 1000;
+     }
+
+    function inLista(n, l) {
+    return l.includes(Number(n));
+    }
+ 
+  
+    function Adicionar() {
+    if(isNumero(num.value) && !inLista(num.value, valores)){
+         valores.push(Number(num.value));
+         let item = document.createElement('option')
+         item.text = `Pessoa com ${num.value} anos`;
+         lista.appendChild(item)
+
+
+    }else{
+        window.alert('[Erro] Preencha o espaço vazio ou número já encontrado na lista');
+    }
+
+    num.value = '';
+    num.focus();
+}
+
+function verificar(){
+         if(valores.length == 0){
+              window.alert('[Erro] Adcione valores e tenta Novamente')
+         }else{
+            let somaIdades = 0;
+            let maisDezoito = 0;
+            let menosCinco = 0;
+            let maiorIdade = valores[0];
+
+            for(let idade of valores) {
+                somaIdades += idade;
+
+                if(idade > 18) {
+                    maisDezoito++;
+                }
+
+                if(idade < 5) {
+                    menosCinco++;
+                }
+
+                if(idade > maiorIdade) {
+                    maiorIdade = idade;
+                }
+            }
+
+            let media = somaIdades / valores.length;
+            res.innerHTML = `a) A média de idade do grupo é: ${media.toFixed(2)} anos<br>`;
+            res.innerHTML += `b) Quantidade de pessoas com mais de 18 anos: ${maisDezoito}<br>`;
+            res.innerHTML += `c) Quantidade de pessoas com menos de 5 anos: ${menosCinco}<br>`;
+            res.innerHTML += `d) A maior idade lida foi: ${maiorIdade} anos<br>`;
+        }
+    }
+
+               
+
+               
+         
+
+   
+</script>
+</html>

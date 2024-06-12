@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Par e Impar e inteiros</title>
+</head>
+<style>
+       body{
+           background-color: red;
+           font-family: Arial, Helvetica, sans-serif;
+       }
+
+       section{
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 500px;
+            margin: auto;
+       }
+            
+</style>
+<body>
+       <section>
+            <h1>Números Reis</h1>
+            <p>
+                Número Inteiro: <input type="number" name="text1" id="text1">
+                <input type="submit" value="verificar" onclick="verificar()">
+            </p>
+            <div id="res">
+                   resultados...
+            </div>
+       </section>
+</body>
+<script>
+       function verificar(){
+             var n = window.document.getElementById('text1')
+             var res = window.document.getElementById('res')
+             res.style.background = 'red'
+             var n = Number(text1.value)
+             var s = n/2
+             
+             res.innerHTML = `<p>O número inteiro é ${n} <\p>`
+                  if(s%2==1){
+                      res.innerHTML += `Número par<\p>`
+                  }else{
+                      res.innerHTML += `Número impar<\p>`
+                  }
+                 
+            }
+</script>
+</html>

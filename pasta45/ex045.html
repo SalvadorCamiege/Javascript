@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contagem 045</title>
+    <style>
+        body{
+             background-color: deeppink;
+             font-family: Arial, Helvetica, sans-serif;
+        }
+        header h1{
+            text-align: center;
+            color: white;
+        }
+
+        section{
+            background-color: white;
+            padding: 10px;
+            width: 500px;
+            margin: auto;
+            border-radius: 10px;
+        }
+  </style>
+   
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+  </header>
+  <section>
+        <div>
+              <p>
+                   Número inicial: <input type="number" name="sc1" id="text1">
+              </p>
+              <p>
+                    Ultimo numero: <input type="number" name="sc2" id="text2">
+              </p>
+              <p>
+                    passo: <input type="number" name="sc3" id="text3">
+              </p>
+            
+              <p>
+                    <input type="submit" value="Contar" onclick="contar()">
+              </p>
+        </div>
+        <div id="res">
+               Contagem...
+        </div>
+  </section>
+</body>
+<script>
+    function contar(){
+       var primeiro = window.document.getElementById('text1')
+       var ultimo = window.document.getElementById('text2')
+       var passo = window.document.getElementById('text3')
+       var res = window.document.getElementById('res')
+       if(primeiro.value == 0 || ultimo.value == 0 || passo.value == 0){
+             window.alert('[Erro] verifique os dados e tenta novamente')
+       }else{
+           res.innerHTML = 'Contando...'
+        
+       }
+    }
+</script>
+</html>

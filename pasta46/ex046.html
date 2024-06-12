@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos resultados</title>
+    <style>
+           body{
+               background-color: brown;
+           }
+
+           header h1{
+                text-align: center;
+                color: white;
+           }
+
+           section {
+                background-color: white;
+                border-radius: 10px;
+                padding: 10px;
+                width: 500px;
+                margin: auto;
+           }
+    </style>
+</head>
+<body>
+      <header>
+            <h1>Soma dos Valores em pares</h1>
+      </header>
+      <section>
+            <p>
+                 Clique no botão abaixo para somar os números 6 + 
+                 8 + 10 + 12 + 14 + ... + 98 + 100.
+            </p>
+            <p>
+                   <input type="submit" value="calcular" onclick="calcular()">
+            </p>
+     
+            <div id="res">
+                        resultado...
+            </div>
+        </section>
+</body>
+<script>
+      function calcular(){
+           
+            let soma = 0;
+            for (let i = 6; i <= 100; i += 2) {
+                 soma+=i;  
+            }
+
+            document.getElementById("res").innerText = "A soma é: " + soma;
+      }
+</script>
+</html>

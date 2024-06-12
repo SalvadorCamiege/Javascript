@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de solteio</title>
+    <style>
+           body{
+               background-color: brown;
+               font-family: Arial, Helvetica, sans-serif;
+           }
+
+           header h1{
+               text-align: center;
+               color: white;
+           }
+
+           section{
+               background-color: white;
+               padding: 10px;
+               width: 500px;
+               margin: auto;
+               border-radius: 10px;
+
+           }
+
+           select#text2{
+                width: 150px;
+           }
+    </style>
+</head>
+<body>
+    <header>
+          <h1>Sistema De Solteio</h1>
+    </header>
+    <section>
+           <div>
+                 <p>
+                      Solteio de (0 até 10): <input type="number" name="sc1" id="text1">
+                      <input type="button" value="Adicionar" onclick="adicionar()">
+                 </p>
+                 <p>
+                       <select name="sc2" id="text2" size="8px">
+                       </select>
+                 </p>
+                 <p>
+                       <input type="button" value="Finalizar" onclick="finalizar()">
+                 </p>
+           </div>
+           <div id="res">
+               
+           </div>
+    </section>
+</body>
+<script>
+    let num = window.document.getElementById('text1');
+    let lista = window.document.getElementById('text2');
+    let res = window.document.getElementById('res');
+    let valores = [];
+     // Aqui encontramos as Funções, onde colocamos function com a identificador e dentro usamos o : conforme se fe...
+    
+     function isNumero(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n) && Number(n) >= 1 && Number(n) <= 20;
+    }
+
+    function inLista(n, l) {
+        return l.includes(Number(n));
+    }
+
+    function adicionar() {
+        if (isNumero(num.value) && !inLista(num.value, valores)) {
+            valores.push(Number(num.value));
+            let item = document.createElement('option');
+            item.text = `valor ${num.value} foi Sorteado`;
+            lista.appendChild(item);
+            res.innerHTML = '';
+        } else {
+            window.alert('[Erro] Preencha o espaço vazio ou número já encontrado na lista');
+        }
+       
+        // Ao adcionar o valor no formulário, ao retirar e atribuir outro e se apagar não caixa, usamos esses dois Comandos
+        num.value = '';
+        num.focus();
+    }
+
+    function finalizar() {
+        if (valores.length === 0) {
+            window.alert('[Erro] Adicione valores nos espaços vazios');
+        } else {
+
+            // Aqui usamos paratornar essa propriedade Funcionaal com ométodo de repetição
+           
+            let tot = valores.length;
+            let acimaDe5 = 0;
+            let divisiveisPor3 = 0;
+            
+            // Aqui atribuimos os valores no método de repetiçâo como se ve com o Tot variavel do array
+           
+            for (let i = 0; i < tot; i++) {
+                if (valores[i] > 5) {
+                    acimaDe5++;
+                }
+                if (valores[i] % 3 === 0) {
+                    divisiveisPor3++;
+                }
+            }
+
+            res.innerHTML = '';
+            res.innerHTML += `Ao todo temos ${tot} número sorteado. <br>`;
+            res.innerHTML += `Dentre eles, ${acimaDe5} estão acima de 5. <br>`;
+            res.innerHTML += `E ${divisiveisPor3}  são divisível por 3. <br>`;
+
+        }
+
+        
+    }
+</script>
+</html>

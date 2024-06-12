@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cumprimento</title>
+    <style>
+        body{
+            background-color: blueviolet;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            text-align: center;
+            color: white;
+        }
+
+        section{
+            background-color: white;
+            padding: 10px;
+            width: 500px;
+            border-radius: 10px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Areia de terreno</h1>
+   </header>
+   <section>
+         <p>Digite a Largura: <input type="number" name="text1" id="text1"></p>
+         <p>Digite o cumprimento: <input type="number" name="text2" id="text2"></p>
+         <p><input type="submit" value="verificar" onclick="verificar()"></p>
+
+         <div id="res">
+               verificar
+         </div>
+   </section>
+</body>
+<script>
+    function verificar(){
+        var largura = window.document.getElementById('text1')
+         var cumprimento = window.document.getElementById('text2')
+         var res = window.document.getElementById('res')
+
+         var largura = Number(text1.value)
+         var cumprimento = Number(text2.value)
+
+         var areia = largura*cumprimento
+        
+         res.innerHTML = `<p> Área do terreno é de ${areia} m²<\p>`
+            if(areia < 100){
+                res.innerHTML += `<p> Tereno Popular<\p>`
+            }else if(areia >= 100 && areia <= 500){
+                res.innerHTML += `<p> Tereno Master<\p>`
+            }else{
+                res.innerHTML += `<p> Tereno Vip<\p>`
+            }
+    }
+      
+           
+
+    
+</script>
+</html>

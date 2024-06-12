@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano BISSEXTO</title>
+    <style>
+           body{
+                background-color: blueviolet;
+           }
+           section{
+                background-color: white;
+                padding: 10px;
+                width: 500px;
+                margin: auto;
+                border-radius: 10px;
+
+           }
+
+           section h1{
+                color: brown;
+                text-align: center;
+           }
+    </style>
+</head>
+<body>
+     <section>
+           <h1>ANO BISSEXTO</h1>
+           <P>
+            Digite o ano: <input type="number" name="text1" id="text1">
+
+            <input type="submit" value="verificar" onclick="verificar()">
+           </P>
+
+           <div id="res">
+                  resultado...
+           </div>
+     </section>
+</body>
+<script>
+      function verificar(){
+            var ano = window.document.getElementById('text1')
+            var res = window.document.getElementById('res')
+            var ano = Number(text1.value)
+           
+            res.innerHTML = `<p>O ano é ${ano}<\p>`
+                if(ano%4==0){
+                    res.innerHTML += `<p>O ano é ${ano} é ano Bissesto<\p>`
+                }else{
+                    res.innerHTML += `<p>O ano ${ano} não é bissesto <\p>`
+                }
+             
+      }
+</script>
+</html>

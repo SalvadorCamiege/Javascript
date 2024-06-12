@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex024</title>
+    <style>
+          body{
+              background-color: brown;
+              font-family: Arial, Helvetica, sans-serif;
+          }
+
+          section{
+              background-color: white;
+              padding: 20px;
+              width: 500px;
+              margin: auto;
+              border-radius: 10px;
+          }
+
+          section h1{
+               text-align: center;
+               color: brown;
+          }
+    </style>
+</head>
+<body>
+     <section>
+          <h1>Distância em Km de um passageiro</h1>
+
+          <p>
+              Quantos KM Pertende Percorrer?: <input type="number" name="text1" id="text1">
+              <input type="submit" value="calcular" onclick="calcular()">
+          </p>
+
+          <div id="res">
+               calcular..
+          </div>
+     </section>
+</body>
+<script>
+      function calcular(){
+            var passageiro = window.document.getElementById('text1')
+            var res = window.document.getElementById('res')
+            res.style.color = 'blue'
+            var passageiro = Number(text1.value)
+            var perto = passageiro*150
+            var resul1 = perto
+            var longe = passageiro*450
+            var resul2 = longe
+
+             res.innerHTML = `<p>O passageiro percorrei ${passageiro}Km/h<\p>`
+                   
+                  if(passageiro != 'perto'){
+                        res.innerHTML += `<p>O passageiro percorrei uma distância de ${passageiro}Km/h e o valor da viagem será de ${resul1}kz<\p>`
+                    }else if(passageiro != 'longe'){
+                        res.innerHTML += `<p>O passageiro percorrei uma distância de ${passageiro}Km/h e o valor da viagem será de ${resul2}kz<\p>` 
+                    }
+      }
+</script>
+</html>

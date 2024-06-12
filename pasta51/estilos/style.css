@@ -1,0 +1,58 @@
+@charset "UTF-8";
+*{
+     margin: 0px;
+     padding: 0px;
+     font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+     background-color: brown;
+     font-family: Arial, Helvetica, sans-serif;
+     width: 100%;
+     
+}
+
+header h1{
+     text-align: center;
+     color: white;
+     margin: 20px;
+
+}
+
+section{
+     background-color: white;
+     padding: 10px;
+     margin-bottom: 20px;
+     width: 500px;
+     margin: auto;
+     border-radius: 10px;
+}
+
+section p{
+     font-size: 1.3em;
+}
+
+section p input{
+      width: 150px;
+      height: 20px;
+}
+
+#sc{
+      background-color: brown;
+      color: white;
+      height: 25px;
+      border: none;
+}
+
+#sc:hover{
+     background-color: black;
+     transition: 2s;
+}
+
+ #text2{
+    margin: 10px 0px 5px 0px;
+    width: 200px;
+    
+    
+}
+

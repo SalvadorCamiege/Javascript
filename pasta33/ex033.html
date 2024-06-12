@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprestimo Bancario</title>
+    <style>
+          body{
+               background-color: brown;
+               font-family: Arial, Helvetica, sans-serif;
+          }
+
+          section{
+              background-color: white;
+              padding: 20px;
+              width: 500px;
+              margin: auto;
+              border-radius: 10px;
+              box-shadow: 2px 2px 2px black;
+          }
+
+          header h1{
+                text-align: center;
+                color: white;
+               
+          }
+
+          header p{
+              color: white;
+              text-align: center;
+          }
+    </style>
+</head>
+<body>
+     <header>
+           <h1>Emprestimo Bancário </h1>
+           <p>Para o empestimo bancário para compra de uma casa precisamos de alguns dados como: Saláriomensal, prazo e o valor pertendido.</p>
+     </header>
+     <section>
+            <p>
+                 Valor da casa : <input type="number" name="text1" id="text1">  
+            </p>
+            <p>
+                  Sálario mensal do comprador: <input type="number" name="text2" id="text2">
+            </p>
+
+            <p>
+                 Em quantos anos Pertendes pagar a casa? : <input type="number" name="text3" id="text3">
+            </p>
+
+            <p>
+                   <input type="submit" value="verificar" onclick="verificar()">
+            </p>
+
+            <div id="res">
+                 Verificar...
+            </div>
+     </section>
+</body>
+<script>
+      function verificar(){
+            var casa = window.document.getElementById('text1')
+            var salario = window.document.getElementById('text2')
+            var ano = window.document.getElementById('text3')
+            var res = window.document.getElementById('res')
+            var casa = Number(text1.value)
+            var salario = Number(text2.value)
+            var ano = Number(text3.value)
+            var prestaçãomaxima = salario*(30/100)
+            var meses = ano * 12
+            var prestação = casa / meses
+
+            res.innerHTML = `<p>O valor da casa ${casa}kz. e o salario mensal do comprador é de ${salario}kz, e ele pertende pagar a casa em ${ano} anos.<\p>`
+                 
+                  if(prestação > salario * 0.3){
+                        res.innerHTML += `<p>Valor da prestação: ${prestação}kz <br>Infelizmente você não pode obter o empréstimo<\p>`
+                  }else{
+                        res.innerHTML += `<p>Valor da prestação: ${prestação}kz Empréstimo OK<\p>`
+                  }
+                       
+      }
+</script>
+</html> 

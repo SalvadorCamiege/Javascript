@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Médias</title>
+</head>
+<body>
+      <section>
+            <h1>Sistemas De notas Escolar</h1>
+            <p>
+               Nome do Aluno: <input type="text" name="text1" id="text1">
+            </p>
+            <p>
+                Primeira Nota do Aluno: <input type="number" name="text1" id="text2">
+            </p>
+
+            <p>
+                 Segunda Nota do Aluno : <input type="number" name="text2" id="text3">
+            </p>
+
+            <p>
+                 <input type="submit" value="Calcular" onclick="calcular()">
+            </p>
+
+            <div id="res">
+                 média:
+            </div>
+      </section>
+</body>
+<script>
+     function calcular(){
+        var nome = window.document.getElementById('text1')
+        var nota1 = window.document.getElementById('text2')
+        var nota2 = window.document.getElementById('text3')
+        var res = window.document.getElementById('res')
+        var nome = (text1.value)
+        var nota1 = Number(text2.value)
+        var nota2 = Number(text3.value)
+        var s = nota1+nota2
+        var media = s/2
+
+        res.innerHTML = `<p>O aluno(a) <strong>${nome}<strong> teve na primeira prova ${nota1} valores é na segunda prova ${nota2} valores. somando as duas notas é divindido por 2 ele possue uma média <strong>${media}<\strong> valores <\p>`
+            if(media > 10){
+                   res.innerHTML += `<strong><p>Apto😚<\p><\strong>`
+            }else{
+                  res.innerHTML += `<strong><p>Não Apto😥<\p><\strong>`
+            }
+    }
+</script>
+</html>

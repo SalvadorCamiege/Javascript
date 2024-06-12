@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa IMC</title>
+</head>
+<style>
+      body{
+           background-color: brown;
+           font-family: Arial, Helvetica, sans-serif;
+      }
+
+      section{
+          background-color: white;
+          padding: 20px;
+          width: 500px;
+          margin: auto;
+          border-radius: 10px;
+          box-shadow: 2px 2px 2px black;
+      }
+
+      header h1{
+            text-align: center;
+            color: white;
+           
+      }
+
+      header p{
+          color: white;
+          text-align: center;
+      }
+</style>
+<body>
+      <header>
+            <h1>Sistema de Peso</h1>
+      </header>
+      <section>
+            <p>
+                 Digite o peso da Pessoa: <input type="number" name="text1" id="text1">
+            </p>
+            <p>
+                 Digite a altura da Pessoa : <input type="number" name="text2" id="text2">
+            </p>
+
+            <p>
+                  <input type="submit" value="verificar" onclick="verificar()">
+            </p>
+
+            <div id="res">
+                  Resultado...
+            </div>
+      </section>
+</body>
+<script>
+      function verificar(){
+            var peso = window.document.getElementById('text1')
+            var altura = window.document.getElementById('text2')
+            var res =  window.document.getElementById('res')
+            var peso = Number(text1.value)
+            var altura = Number(text2.value)
+            var imc = peso / (altura **2)
+
+
+            res.innerHTML = `<p>O pessoa real da pessoa é ${peso}N e a sua altura é de ${altura} igual ${imc}<\p>`
+                 if(imc < 18.5){
+                    res.innerHTML += `<p>Abaixo do peso<\p>`
+                 } else if (imc >= 18.5 && imc > 25) {
+                    res.innerHTML += `<p>Peso ideal<\p>`
+                 } else if (imc >= 25 && imc < 30) {
+                    res.innerHTML += `<p>sobrepeso<\p>`
+               } else if (imc >= 30 && imc < 40) {
+                    res.innerHTML += `<p>Obecidade<\p>`
+               } else {
+                    res.innerHTML += `<p>Obseidade mórbida<\p>`
+               }
+}
+                 
+      
+</script>
+</html>

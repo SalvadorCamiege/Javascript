@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições Compostas</title>
+    <style>
+        body{
+            background-color: brown;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            text-align: center;
+            color: white;
+        }
+
+        section{
+            background-color: white;
+            padding: 10px;
+            width: 500px;
+            border-radius: 10px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+       <header>
+            <h1>Algoritmo que leia Números</h1>
+       </header>
+       <section>
+             <p>Digite oprimeiro número: <input type="number" name="text1" id="text1"></p>
+             <p>Digite o segundo número: <input type="number" name="text2" id="text2"></p>
+             <p><input type="submit" value="verificar" onclick="verificar()"></p>
+
+             <div id="res">
+                   verificar
+             </div>
+       </section>
+</body>
+<script>
+      function verificar(){
+           var n1 = window.document.getElementById('text1')
+           var n2 = window.document.getElementById('text2')
+           var res = window.document.getElementById('res')
+
+           var n1 = Number(text1.value)
+           var n2 = Number(text2.value)
+
+           res.innerHTML = `<p>O primeiro número é ${n1} é o segundo número é ${n2}<\p>`
+              if(n1>n2){
+                  res.innerHTML = `<p>O primeiro valor é maior<\p>`
+              }else if(n2>n1){
+                    res.innerHTML = `<p>O segundo valor é maior<\p>`
+              }else if(n1==n2){
+                   res.innerHTML = `<p>Não existe valor maior, os dois são iguais<\p>`
+              }
+
+      }
+</script>
+</html>

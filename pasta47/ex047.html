@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma Dos valres</title>
+    <style>
+          body{
+              background-color: blue;
+              font-family: Arial, Helvetica, sans-serif;
+          }
+
+          header h1{
+              color: white;
+              text-align: center;
+          }
+          section{
+               background-color: white;
+               padding: 10px;
+               width: 500px;
+               margin: auto;
+               border-radius: 10px;
+          }
+    </style>
+</head>
+<body>
+      <header>
+             <h1>Soma de números regressivos</h1>
+      </header>
+      <section>
+             <p>Soma de números regressivos: 500 + 
+                450 + 400 + 350 + 300 + ... + 50 + 0</p>
+             <p>
+                <input type="submit" value="somar" onclick="somar()">
+            </p>
+             <div id="res">
+                   Resultado final...
+             </div>
+      </section>
+</body>
+<script>
+      function somar(){
+           let soma = 0;
+           for (let i = 500; i >= 0; i-=5) {
+               soma +=i;
+            }
+
+           document.getElementById("res").innerText = `A soma é ${soma}`
+      }
+</script>
+</html>

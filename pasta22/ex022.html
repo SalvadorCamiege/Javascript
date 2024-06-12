@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex022</title>
+    <style>
+           body{
+               background-color: brown;
+               font-family: Arial, Helvetica, sans-serif;
+           }
+
+           section{
+               background-color: white;
+               padding: 10px;
+               border-radius: 10px;
+           }
+
+           section h1{
+                  text-align: center;
+                  font-size: 2em;
+           }
+    </style>
+</head>
+<body>
+      <section>
+        <h1>Alistamento Militar</h1>
+           <p>
+                Ano de nascimento da Pessoa: <input type="number" name="text1" id="text1">
+
+                <input type="submit" value="Verificar" onclick="verificar()">
+           </p>
+
+           <div id="res">
+                 Analizar...
+           </div>
+
+      </section>
+</body>
+<script>
+      function verificar(){
+            var ano = window.document.getElementById('text1')
+            var res = window.document.getElementById('res')
+            res.style.color = 'red'
+            var ano = Number(text1.value)
+            var idade = 2024-ano
+            var resul = idade-18
+            var resu = 18-idade
+           
+           res.innerHTML = `<p>Nasceste em ${ano}, tens ${idade} anos <\p>`
+            if(idade < 18){
+                res.innerHTML = `<p>Tens ${idade} anos. faltam ${resu} anos para o alistamento militar <\p>`
+            }else if(idade > 18){
+                res.innerHTML = `<p>Tens ${idade} anos. se passaram ${resul} anos para o alistamento militar <\p>`
+            }
+               
+               
+      }
+</script>
+
+</html>

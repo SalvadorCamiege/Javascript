@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Escolar</title>
+    <style>
+        body{
+            background-color: red;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            text-align: center;
+            color: white;
+        }
+
+        section{
+            background-color: white;
+            padding: 10px;
+            width: 500px;
+            border-radius: 10px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sistemas Escolar</h1>
+   </header>
+   <section>
+         <p>Digite a primeira nota: <input type="number" name="text1" id="text1"></p>
+         <p>Digite o segundo nota: <input type="number" name="text2" id="text2"></p>
+         <p><input type="submit" value="verificar" onclick="verificar()"></p>
+
+         <div id="res">
+               verificar
+         </div>
+   </section>
+    
+</body>
+<script>
+    function verificar(){
+         var n1 = window.document.getElementById('text1')
+         var n2 = window.document.getElementById('text2')
+         var res = window.document.getElementById('res')
+
+         var n1 = Number(text1.value)
+         var n2 = Number(text2.value)
+         var soma = n1+n2
+         var media = soma/2
+
+         res.innerHTML = `<p>Primeira Prova ${n1} valores <br> Segunda prova ${n2} valores <br> Média final ${media} <\p>`
+             if(media < 5){
+                res.innerHTML += `<p>Reprovado😥<\p>`
+             }else if(media >= 5 && media <= 9.5){
+                res.innerHTML += `<p>Recuperando😥<\p>`
+             }else if(media >= 9.5 && media <= 20 ){
+                res.innerHTML += `<p>Aprovado😊<\p>` 
+             }
+           
+
+    }
+</script>
+</html>
